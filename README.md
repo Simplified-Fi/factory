@@ -1,0 +1,2 @@
+# factory
+Simplified Factory Contract
