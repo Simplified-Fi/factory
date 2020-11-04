@@ -1,0 +1,55 @@
+{
+  "name": "simplifiedcorecontracts",
+  "description": "Core contracts for the SimplifiedSwap protocol",
+  "version": "0.0.1",
+  "homepage": "https://simplified.finance",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simplified.finance"
+  },
+  "keywords": [
+  ],
+  "files": [
+    "contracts",
+    "build"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "license": "GPL-3.0-or-later",
+  "scripts": {
+    "lint": "yarn prettier ./test/*.ts --check",
+    "lint:fix": "yarn prettier ./test/*.ts --write",
+    "clean": "rimraf ./build/ && rimraf ./cache/",
+    "precompile": "yarn clean",
+    "compile": "waffle .waffle.json",
+    "pretest": "yarn compile",
+    "test": "mocha",
+    "prepublishOnly": "yarn test",
+    "truffle-compile": "./node_modules/.bin/truffle compile",
+    "truffle-migrate": "./node_modules/.bin/truffle migrate --reset;",
+    "truffle-migrate-ropsten": "./node_modules/.bin/truffle migrate --reset --network ropsten",
+    "truffle-migrate-mainnet": "./node_modules/.bin/truffle migrate --reset --network mainnet",
+    "truffle-migrate-kovan": "./node_modules/.bin/truffle migrate --reset --network kovan",
+    "replace-factory": "node ./scripts/replaceFactory.js"
+  },
+  "dependencies": {
+    "truffle": "5.1.42"
+  },
+  "devDependencies": {
+    "@truffle/hdwallet-provider": "1.0.43",
+    "@types/chai": "4.2.6",
+    "@types/mocha": "5.2.7",
+    "chai": "4.2.0",
+    "dotenv": "8.2.0",
+    "ethereum-waffle": "2.4.1",
+    "ethereumjs-util": "6.2.0",
+    "git-hooks": "1.1.10",
+    "mocha": "6.2.2",
+    "prettier": "1.19.1",
+    "rimraf": "3.0.0",
+    "solc": "0.5.16",
+    "ts-node": "8.5.4",
+    "typescript": "3.7.3"
+  }
+}

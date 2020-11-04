@@ -1,2 +1,1 @@
-# factory
-Simplified Factory Contract
+# Simplified-Factory
